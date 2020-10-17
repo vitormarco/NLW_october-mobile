@@ -37,16 +37,6 @@ export default function OrphanageData() {
       open_on_weekends, 
     } = form
 
-    console.log({
-      name,
-      about,
-      instructions,
-      opening_hours,
-      open_on_weekends,
-      latitude,
-      longitude 
-    });
-
     const data = new FormData(); 
     data.append('name', name);
     data.append('about', about);
@@ -65,7 +55,7 @@ export default function OrphanageData() {
     });
 
     await api.post('orphanages', data);
-    
+
     navigation.navigate('OrphanagesMap');
   }
 
